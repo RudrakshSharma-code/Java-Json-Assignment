@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -22,8 +23,16 @@ public class TeamsAdapter extends ArrayAdapter<Team> {
         final Activity activity = (Activity) _context;
         Team team = getItem(position);
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_team_view, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_row_layout, parent, false);
         }
+        TextView teamName = convertView.findViewById(R.id.teamName);
+        TextView link = convertView.findViewById(R.id.link);
+        TextView ids = convertView.findViewById(R.id.ids);
+
+        // Populate the data into the template view using the data object
+        teamName.setText(String.format(" %s", team.getName()));
+        link.setText(team.getLink());
+
         return convertView;
     }
 }

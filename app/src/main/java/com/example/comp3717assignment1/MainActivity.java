@@ -2,11 +2,11 @@ package com.example.comp3717assignment1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv;
 
     //URL for teams
-    private static String TEAMS_URL = "https://statsapi.web.nhl.com/api/v1/teams";
+    private static String TEAMS_URL = "https://statsapi.web.nhl.com/api/v1/teams/";
     private ArrayList<Team> teamList;
 
     @Override
@@ -27,6 +27,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new GetContacts().execute();
+
+        teamList = new ArrayList<Team>();
+        lv = findViewById(R.id.TeamList);
+        Log.e(TAG, "TEAM CHOICE: " + lv);
+        new GetContacts().execute();
+
+        lv.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(this, PlayerViewActivity.class);
+            intent.putExtra("choice", i);
+            Log.e(TAG, "TEAM CHOICE: " + i);
+
+            startActivity(intent);
+        });
     }
 
     private class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -41,11 +54,8 @@ public class MainActivity extends AppCompatActivity {
             String jsonStr = null;
 
             jsonStr = sh.makeServiceCall(TEAMS_URL);
-            Log.e(TAG, "Response from URL: " + jsonStr);
 
             if (jsonStr != null) {
-                Log.d(TAG, "Json: " + jsonStr);
-                // this step is needed to wrap the JSON array inside
                 Gson gson = new Gson();
                 BaseTeam baseTeam = gson.fromJson(jsonStr, BaseTeam.class);
                 teamList = baseTeam.getTeams();
@@ -53,27 +63,23 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "TEAM NAME: " + teamList.get(0).getName() + " TEAM LINK: " + teamList.get(0).getLink());
             } else {
                 Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
-                                Toast.LENGTH_LONG)
-                                .show();
-                    }
-                });
+                runOnUiThread(() -> Toast.makeText(getApplicationContext(),
+                        "Couldn't get json from server. Check LogCat for possible errors!",
+                        Toast.LENGTH_LONG)
+                        .show());
             }
 
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            //ToonsAdapter adapter = new ToonsAdapter(MainActivity.this, toonList);
+            TeamsAdapter adapter = new TeamsAdapter(MainActivity.this, teamList);
 
             // Attach the adapter to a ListView
-            //lv.setAdapter(adapter);
+            lv.setAdapter(adapter);
         }
     }
 
