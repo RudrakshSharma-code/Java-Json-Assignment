@@ -9,6 +9,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
             if (jsonStr != null) {
                 Log.d(TAG, "Json: " + jsonStr);
                 // this step is needed to wrap the JSON array inside
-                jsonStr = "{\"Teams\":" + jsonStr + "}";
-                //Gson gson = new Gson();
-                //BaseToon baseToon = gson.fromJson(jsonStr, BaseToon.class);
-                //toonList = baseToon.getToons();
+                Gson gson = new Gson();
+                BaseTeam baseTeam = gson.fromJson(jsonStr, BaseTeam.class);
+                teamList = baseTeam.getTeams();
+                // Test if able to retrieve team name and link from teamList.
+                Log.e(TAG, "TEAM NAME: " + teamList.get(0).getName() + " TEAM LINK: " + teamList.get(0).getLink());
             } else {
                 Log.e(TAG, "Couldn't get json from server.");
                 runOnUiThread(new Runnable() {
