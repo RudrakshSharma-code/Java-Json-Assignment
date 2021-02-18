@@ -1,4 +1,4 @@
 package com.example.comp3717assignment1;
 
-public class Teams {
+public class Team {
 }
