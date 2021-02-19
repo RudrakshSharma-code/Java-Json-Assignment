@@ -5,7 +5,19 @@ import com.google.gson.annotations.SerializedName;
 
 public class Player {
 
-    @SerializedName("fullName")
+    @SerializedName("person")
+    @Expose
+    private Person person;
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    /*    @SerializedName("fullName")
     @Expose
     private String fullName;
     public String getFullName() {
@@ -13,7 +25,7 @@ public class Player {
     }
     public void setFullName(String fullName) {
         this.fullName = fullName;
-    }
+    }*/
 
 //    @SerializedName("jerseyNumber")
 //    @Expose
@@ -33,6 +45,7 @@ public class Player {
 //        this.position = position;
 //    }
 
+/*
     @SerializedName("id")
     @Expose
     private int id;
@@ -42,4 +55,7 @@ public class Player {
     public void setId(int url) {
         this.id = url;
     }
+
+ */
 }
+

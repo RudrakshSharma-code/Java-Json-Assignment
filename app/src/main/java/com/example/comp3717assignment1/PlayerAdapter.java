@@ -30,7 +30,7 @@ public class PlayerAdapter extends ArrayAdapter<Player> {
 //        TextView pos = convertView.findViewById(R.id.pos);
 
         // Populate the data into the template view using the data object
-        playerName.setText(String.format("%s", player.getFullName()));
+        playerName.setText(String.format("%s", player.getPerson().getFullName()));
 //        jerseyNo.setText(player.getJersey());
 //        pos.setText(player.getPosition());
 

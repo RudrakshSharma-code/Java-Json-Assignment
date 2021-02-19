@@ -77,7 +77,7 @@ public class PlayerViewActivity extends AppCompatActivity {
                 playerList = basePlayer.getPlayers();
 
                 //step should return full name
-                Log.e(TAG, "Player name: " + playerList.get(0).getFullName());
+                Log.e(TAG, "Player name: " + playerList.get(0).getPerson().getFullName());
             } else {
                 Log.e(TAG, "Couldn't get json from server.");
                 runOnUiThread(() -> Toast.makeText(getApplicationContext(),
