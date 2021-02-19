@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1.Adapters;
+package com.example.Maeschalck_Sharma.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.comp3717assignment1.Objects.Player;
-import com.example.comp3717assignment1.R;
+import com.example.Maeschalck_Sharma.Objects.Player;
+import com.example.Maeschalck_Sharma.R;
 
 import java.util.ArrayList;
 

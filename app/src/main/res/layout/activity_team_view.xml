@@ -14,12 +14,6 @@
         tools:layout_editor_absoluteX="197dp"
         tools:layout_editor_absoluteY="259dp">
 
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
         <ListView
             android:id="@+id/PlayerList"
             android:background="@drawable/gradient"

@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1;
+package com.example.Maeschalck_Sharma;
 
 import org.junit.Test;
 

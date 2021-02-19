@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1.Activities;
+package com.example.Maeschalck_Sharma.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +12,11 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.comp3717assignment1.Adapters.TeamsAdapter;
-import com.example.comp3717assignment1.BaseClasses.BaseTeam;
-import com.example.comp3717assignment1.HttpHandler;
-import com.example.comp3717assignment1.R;
-import com.example.comp3717assignment1.Objects.Team;
+import com.example.Maeschalck_Sharma.Adapters.TeamsAdapter;
+import com.example.Maeschalck_Sharma.BaseClasses.BaseTeam;
+import com.example.Maeschalck_Sharma.HttpHandler;
+import com.example.Maeschalck_Sharma.R;
+import com.example.Maeschalck_Sharma.Objects.Team;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
-            String jsonStr = null;
+            String jsonStr;
 
             jsonStr = sh.makeServiceCall(TEAMS_URL);
 

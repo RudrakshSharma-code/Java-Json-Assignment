@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1.Activities;
+package com.example.Maeschalck_Sharma.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +11,11 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.comp3717assignment1.Adapters.DetailsAdapter;
-import com.example.comp3717assignment1.BaseClasses.BaseDetails;
-import com.example.comp3717assignment1.Objects.Details;
-import com.example.comp3717assignment1.HttpHandler;
-import com.example.comp3717assignment1.R;
+import com.example.Maeschalck_Sharma.Adapters.DetailsAdapter;
+import com.example.Maeschalck_Sharma.BaseClasses.BaseDetails;
+import com.example.Maeschalck_Sharma.Objects.Details;
+import com.example.Maeschalck_Sharma.HttpHandler;
+import com.example.Maeschalck_Sharma.R;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -62,7 +62,7 @@ public class FinalScreenActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
-            String jsonStr = null;
+            String jsonStr;
             FINAL_URL = ("https://statsapi.web.nhl.com/api/v1/people/" + choiceIndex);
             jsonStr = sh.makeServiceCall(FINAL_URL);
 

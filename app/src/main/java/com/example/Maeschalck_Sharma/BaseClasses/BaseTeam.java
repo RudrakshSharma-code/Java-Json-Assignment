@@ -1,6 +1,6 @@
-package com.example.comp3717assignment1.BaseClasses;
+package com.example.Maeschalck_Sharma.BaseClasses;
 
-import com.example.comp3717assignment1.Objects.Team;
+import com.example.Maeschalck_Sharma.Objects.Team;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

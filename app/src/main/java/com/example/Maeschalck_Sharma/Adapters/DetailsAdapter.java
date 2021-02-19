@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1.Adapters;
+package com.example.Maeschalck_Sharma.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.comp3717assignment1.Objects.Details;
-import com.example.comp3717assignment1.R;
+import com.example.Maeschalck_Sharma.Objects.Details;
+import com.example.Maeschalck_Sharma.R;
 
 import java.util.ArrayList;
 
@@ -31,11 +31,16 @@ public class DetailsAdapter extends ArrayAdapter<Details> {
         TextView nameDetail = convertView.findViewById(R.id.nameDetail);
         TextView country = convertView.findViewById(R.id.country);
         TextView age = convertView.findViewById(R.id.age);
+        TextView pos = convertView.findViewById(R.id.position);
+        TextView currentTeam = convertView.findViewById(R.id.currentTeam);
+
 
         // Populate the data into the template view using the data object
         nameDetail.setText(String.format("Name: %s", details.getFullName()));
-        country.setText(String.format("Nationality: %s", details.getBirthCountry()));
+        currentTeam.setText(String.format("Team: %s", details.getCurrentTeam().getName()));
         age.setText(String.format("Age: %s", details.getCurrentAge()));
+        country.setText(String.format("Nationality: %s", details.getBirthCountry()));
+        pos.setText(String.format("Position: %s", details.getPrimaryPosition().getName()));
 
         return convertView;
     }

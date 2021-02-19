@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1.Objects;
+package com.example.Maeschalck_Sharma.Objects;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
