@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.COMP3717Assignment1" >
-        <activity android:name=".FinalScreenActivity" >
+        <activity android:name=".Activities.FinalScreenActivity" >
         </activity>
-        <activity android:name=".PlayerViewActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".Activities.PlayerViewActivity" />
+        <activity android:name=".Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

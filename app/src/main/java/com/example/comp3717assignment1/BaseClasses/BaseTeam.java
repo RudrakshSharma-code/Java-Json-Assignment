@@ -1,5 +1,6 @@
-package com.example.comp3717assignment1;
+package com.example.comp3717assignment1.BaseClasses;
 
+import com.example.comp3717assignment1.Objects.Team;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

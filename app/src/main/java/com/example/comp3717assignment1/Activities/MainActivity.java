@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1;
+package com.example.comp3717assignment1.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,11 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.comp3717assignment1.Adapters.TeamsAdapter;
+import com.example.comp3717assignment1.BaseClasses.BaseTeam;
+import com.example.comp3717assignment1.HttpHandler;
+import com.example.comp3717assignment1.R;
+import com.example.comp3717assignment1.Objects.Team;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -30,14 +35,13 @@ public class MainActivity extends AppCompatActivity {
 
         teamList = new ArrayList<Team>();
         lv = findViewById(R.id.TeamList);
-        Log.e(TAG, "TEAM CHOICE: " + lv);
+        //Log.e(TAG, "TEAM CHOICE: " + lv);
         new GetContacts().execute();
 
         lv.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(this, PlayerViewActivity.class);
             intent.putExtra("choice", i);
             Log.e(TAG, "TEAM CHOICE: " + i);
-
             startActivity(intent);
         });
     }
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
             TeamsAdapter adapter = new TeamsAdapter(MainActivity.this, teamList);
 
-            // Attach the adapter to a ListView
+            // Attach the adapter to a ListViews
             lv.setAdapter(adapter);
         }
     }

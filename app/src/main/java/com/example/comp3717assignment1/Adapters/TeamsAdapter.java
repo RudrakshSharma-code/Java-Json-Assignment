@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1;
+package com.example.comp3717assignment1.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.example.comp3717assignment1.R;
+import com.example.comp3717assignment1.Objects.Team;
 
 import java.util.ArrayList;
 
@@ -26,12 +29,13 @@ public class TeamsAdapter extends ArrayAdapter<Team> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_row_layout, parent, false);
         }
         TextView teamName = convertView.findViewById(R.id.teamName);
-        TextView link = convertView.findViewById(R.id.link);
-        TextView ids = convertView.findViewById(R.id.ids);
+        TextView abbreviation = convertView.findViewById(R.id.abbreviation);
+        TextView url = convertView.findViewById(R.id.url);
 
         // Populate the data into the template view using the data object
         teamName.setText(String.format(" %s", team.getName()));
-        link.setText(team.getLink());
+        abbreviation.setText(String.format(" %s", team.getAbbreviation()));
+        url.setText(String.format(" %s", team.getOfficialSiteUrl()));
 
         return convertView;
     }

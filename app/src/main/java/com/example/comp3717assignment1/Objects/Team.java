@@ -1,4 +1,4 @@
-package com.example.comp3717assignment1;
+package com.example.comp3717assignment1.Objects;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +23,26 @@ public class Team {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    @SerializedName("abbreviation")
+    @Expose
+    private String abbreviation;
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+    public void setAbbreviation(String abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
+    @SerializedName("officialSiteUrl")
+    @Expose
+    private String officialSiteUrl;
+    public String getOfficialSiteUrl() {
+        return officialSiteUrl;
+    }
+    public void setOfficialSiteUrl(String officialSiteUrl) {
+        this.officialSiteUrl = officialSiteUrl;
     }
 
     @SerializedName("link")

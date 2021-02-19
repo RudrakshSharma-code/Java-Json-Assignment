@@ -12,18 +12,18 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/teamName"
+            android:id="@+id/nameDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp" />
 
         <TextView
-            android:id="@+id/abbreviation"
+            android:id="@+id/country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/url"
+            android:id="@+id/age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
