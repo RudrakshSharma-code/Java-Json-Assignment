@@ -23,6 +23,9 @@
 
         <ListView
             android:id="@+id/TeamList"
+            android:background="@drawable/gradient"
+            android:textStyle="bold"
+            style="@style/listStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />

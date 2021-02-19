@@ -1,7 +1,10 @@
 package com.example.comp3717assignment1.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +33,13 @@ public class FinalScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_screen);
         new GetContacts().execute();
+
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#FF000000"));
+
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         detailsList = new ArrayList<Details>();
         lastLV = findViewById(R.id.DetailsList);
