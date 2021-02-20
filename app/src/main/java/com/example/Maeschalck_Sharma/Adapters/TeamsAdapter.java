@@ -22,7 +22,7 @@ public class TeamsAdapter extends ArrayAdapter<Team> {
     }
 
     @Override
-    public View getView (int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         final Activity activity = (Activity) _context;
         Team team = getItem(position);
         if (convertView == null) {

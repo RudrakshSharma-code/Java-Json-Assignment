@@ -7,6 +7,7 @@ public class PrimaryPosition {
     @SerializedName("name")
     @Expose
     private String name;
+
     public String getName() {
         return name;
     }

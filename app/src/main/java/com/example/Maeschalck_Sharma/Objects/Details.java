@@ -48,9 +48,11 @@ public class Details {
     @SerializedName("currentTeam")
     @Expose
     private CurrentTeam currentTeam;
+
     public CurrentTeam getCurrentTeam() {
         return currentTeam;
     }
+
     public void setCurrentTeam(CurrentTeam currentTeam) {
         this.currentTeam = currentTeam;
     }
@@ -58,9 +60,11 @@ public class Details {
     @SerializedName("primaryPosition")
     @Expose
     private PrimaryPosition primaryPosition;
+
     public PrimaryPosition getPrimaryPosition() {
         return primaryPosition;
     }
+
     public void setPrimaryPosition(PrimaryPosition primaryPosition) {
         this.primaryPosition = primaryPosition;
     }

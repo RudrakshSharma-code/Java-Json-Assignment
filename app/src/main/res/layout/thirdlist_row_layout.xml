@@ -7,15 +7,17 @@
     android:padding="8dp">
 
     <LinearLayout
-        android:layout_width="411dp"
+        android:layout_width="282dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:showDividers="beginning|end">
 
         <TableLayout
-            android:layout_width="241dp"
+            android:layout_width="243dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:divider="@color/black"
+            android:paddingLeft="2dp"
             android:showDividers="middle">
 
             <TableRow
@@ -101,7 +103,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
+                    android:paddingRight="2dp"
                     android:text="@string/position" />
 
                 <TextView
