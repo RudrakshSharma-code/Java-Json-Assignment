@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:divider="?attr/dividerVertical"
     android:orientation="horizontal"
     tools:context=".Activities.FinalScreenActivity">
 
@@ -16,9 +17,12 @@
 
     <ListView
         android:id="@+id/DetailsList"
-        android:background="@drawable/gradient"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        android:dividerHeight="1dp"
+        android:divider="@color/cardview_dark_background"
+        />
 
   </LinearLayout>
 

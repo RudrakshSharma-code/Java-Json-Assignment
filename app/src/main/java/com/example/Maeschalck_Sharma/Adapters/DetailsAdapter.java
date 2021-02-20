@@ -36,11 +36,11 @@ public class DetailsAdapter extends ArrayAdapter<Details> {
 
 
         // Populate the data into the template view using the data object
-        nameDetail.setText(String.format("Name: %s", details.getFullName()));
-        currentTeam.setText(String.format("Team: %s", details.getCurrentTeam().getName()));
-        age.setText(String.format("Age: %s", details.getCurrentAge()));
-        country.setText(String.format("Nationality: %s", details.getBirthCountry()));
-        pos.setText(String.format("Position: %s", details.getPrimaryPosition().getName()));
+        nameDetail.setText(String.format("%s" , details.getFullName()));
+        currentTeam.setText(String.format("%s", details.getCurrentTeam().getName()));
+        age.setText(String.format("%s", details.getCurrentAge()));
+        country.setText(String.format("%s", details.getBirthCountry()));
+        pos.setText(String.format("%s", details.getPrimaryPosition().getName()));
 
         return convertView;
     }
